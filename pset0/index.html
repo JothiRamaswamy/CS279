@@ -1,0 +1,36 @@
+<!-- code from https://www.w3schools.com/howto/howto_js_todolist.asp with some
+modifications -->
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<!-- add CSS styles here -->
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+<!-- add a div section for the header, with the title, along with the input box
+for adding to the list-->
+<div id="myDIV" class="header">
+  <h2 style="margin:5px">My To Do List</h2>
+  <input type="text" id="myInput" placeholder="Title...">
+  <span onclick="newElement()" class="addBtn">Add</span>
+</div>
+
+<!-- the actual todo list, with some default items to start with -->
+<!-- the id is useful to reference the list in JS when we want to add new items -->
+<ul id="myUL">
+  <li>Hit the gym</li>
+  <li>Pay bills</li>
+  <li>Meet George</li>
+  <li>Buy eggs</li>
+  <li>Read a book</li>
+  <!-- default example of a checked item (based on the class)-->
+  <li class="checked">Organize office</li>
+</ul>
+
+<!-- javascript script to add interactive features to the todo list -->
+<script src="index.js"></script>
+
+</body>
+</html>
