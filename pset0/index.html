@@ -16,7 +16,6 @@ for adding to the list-->
   <input type="text" id="myInput" placeholder="Title...">
   <span onclick="newElement()" class="addBtn">Add</span>
 </div>
-
 <!-- the actual todo list, with some default items to start with -->
 <!-- the id is useful to reference the list in JS when we want to add new items -->
 <ul id="myUL">
@@ -29,8 +28,13 @@ for adding to the list-->
   <li class="checked">Organize office</li>
 </ul>
 
+<!-- checkbox to toggle if you want to move checked items to the bottom of the list -->
+<div class="checkboxes">
+    <input type="checkbox" id="myCheckbox"> <label>Move checked items to the bottom of the list</label>
+  </div>
+
 <!-- javascript script to add interactive features to the todo list -->
-<script src="index.js"></script>
+<script src="scripts.js"></script>
 
 </body>
 </html>

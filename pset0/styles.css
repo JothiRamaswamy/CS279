@@ -7,6 +7,21 @@ body {
   * {
     box-sizing: border-box;
   }
+
+  /* Style the checkbox alignment and margin */
+  .checkboxes {
+    text-align:left;
+    margin: 30px 100px 0px 0px;
+  }
+  
+  /* adjust the margins of the input/label so they aren't weirdly spaced out */
+  .checkboxes input{
+    margin: 0px 0px 0px -400px;
+  }
+  
+  .checkboxes label{
+    margin: 0px 0px 0px -480px;
+  }
   
   /* Remove margins and padding from the list */
   ul {
