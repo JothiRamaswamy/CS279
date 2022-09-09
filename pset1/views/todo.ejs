@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+
+<!-- site header -->
+<head>
+    <!-- title of the site -->
+    <title>Todo App</title>
+
+    <!-- link all the CSS stylesheets we want to use, including the one we created in style.css -->
+    <link rel="stylesheet" href="/static/stylesheets/style.css" type="text/css">
+    <link href="https://fonts.googleapis.com/css?family=Baloo+Bhai|Candal|Chewy&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css"
+        integrity="sha384-oS3vJWv+0UjzBfQzYUhtDYW+Pj2yciDJxpsK1OYPAYjqT085Qq/1cq5FLXAZQ7Ay" crossorigin="anonymous">
+</head>
+
+<!-- actual page content/body -->
+<body>
+    <!-- creating the div for the separate box that contains all the todo list info -->
+    <div class="todo-container">
+        <!-- title of todo list inside the page body -->
+        <h2>To-Do List</h2>
+        <!-- where you enter new todo items -->
+        <div class="todo">
+            <!-- form that allows you to submit new todo items, then sends a post request
+            to add the submitted item to MongoDB -->
+            <form action="/" method="POST" class="todo-header">
+                <input type="text" name="content">
+                <button type="submit"><span class="fas fa-plus"></span></button>
+            </form>
+            <!-- list of all the current todo list items -->
+            <ul class="todo-list">
+                <!-- iterate through all the todoTasks passed into the rendered page, and create a list
+                item for each, including buttons to edit/delete the items -->
+                <% todoTasks.forEach(details=> { %>
+                    <li class="todo-list-item">
+                        <div class="todo-list-item-name">
+                            <%= details.content %>
+                        </div>
+                        <!-- if we want to edit an item, it sends a get request to render the edit template in the item -->
+                        <a href="/edit/<%= details._id %>" class="edit">
+                            <span class="fas fa-edit"></span>
+                        </a>
+                        <!-- if we want to edit an item, it sends a get request to delete the item -->
+                        <a href="/remove/<%= details._id %>" class="remove">
+                            <span class="fas fa-times"></span>
+                        </a>
+                    </li>
+                    <% }) %>
+            </ul>
+        </div>
+    </div>
+</body>

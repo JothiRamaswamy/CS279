@@ -1,0 +1,139 @@
+/* CSS Styles for TODO list */
+
+/* general sizing CSS */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    }
+
+/* adjust background color */
+    body {
+    background: #258e8e;
+    }
+
+/* style values for the todo-container class for the opaque box containing 
+the todo list */
+    .todo-container {
+    color: white;
+    position: absolute;
+    top:50%;
+    left: 50%;
+    padding: 20px;
+    width: 600px;
+    transform: translate(-50%,-50%);
+    background: rgba(0, 0, 0, 0.1);
+    border-radius: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    }
+/* adjusting the width for elements in the todo class */
+    .todo {
+    width: 400px;
+    }
+
+/* adjusting style for the h2 header inside the todo container */
+    .todo-container h2 {
+    padding: 10px;
+    font-family: 'Candal', sans-serif;
+    font-size: 2em;
+    }
+
+/* adjusting style for the input elements inside the todo header class */
+    .todo-header input {
+    width: 92%;
+    border: none;
+    border-radius: 5px;
+    height: 20px;
+    font-family: 'Candal', sans-serif;
+    }
+
+/* adjusting style for the buttons inside the todo header class */
+    .todo-header button {
+    color: white;
+    border: none;
+    border-radius: 50%;
+    cursor: pointer;
+    padding: 5px;
+    font-family: 'Candal', sans-serif;
+    background-color: rgb(51, 212, 100);
+    }
+
+/* adjusting style for the list of items inside the todo container */
+    .todo-container ul {
+    list-style: none;
+    }
+
+/* adjusting style for the items in the todo list (todo-list-item class) */
+    .todo-list-item {
+    padding: 10px;
+    margin-top: 10px;
+    border: none;
+    border-radius: 5px;
+    font-family: 'Candal', sans-serif;
+    background: rgba(0, 0, 0, 0.3);
+    display: flex;
+    flex-direction: row;
+    }
+
+/* adjusting style for the form element inside todo list items */
+    .todo-list-item form {
+    width: 100%;
+    display: flex;
+    }
+
+/* adjusting style for the input fields inside todo list items */
+    .todo-list-item input {
+    flex-grow: 2;
+    margin-right: 20px;
+    border: none;
+    border-radius: 5px;
+    font-family: 'Candal', sans-serif;
+    }
+
+/* adjusting style for the buttons inside todo list items */
+    .todo-list-item button {
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    padding: 5px;
+    font-family: 'Candal', sans-serif;
+    background-color: rgb(51, 212, 100);
+    }
+
+/* adjusting style for the cancel button inside todo list items */
+    .todo-list-item .cancel {
+    color: white;
+    text-decoration: none;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    padding: 5px;
+    font-family: 'Candal', sans-serif;
+    background-color: rgb(223, 43, 43);
+    margin-left: 5px;
+    }
+
+/* adjusting style for divs inside todo list items */
+    .todo-list-item div {
+    flex-grow: 2;
+    }
+
+/* adjusting style for edit button inside todo list items */
+    .todo-list-item .edit {
+    color : rgb(143, 233, 58);
+    margin-right: 10px;
+    cursor:pointer;
+    text-decoration: none;
+    }
+
+/* adjusting style for delete button inside todo list items */
+    .todo-list-item .remove {
+    color : rgb(243, 96, 96);
+    margin-right: 5px;
+    cursor:pointer;
+    text-decoration: none;
+    }
+    
