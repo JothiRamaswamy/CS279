@@ -28,8 +28,7 @@ app.use("/static", express.static("public"))
 // property of the request
 app.use(express.urlencoded({ extended: true }));
 
-//connection to db
-// mongoose.set("useFindAndModify", falseß);
+//connection to db through monggoose
 mongoose.connect(process.env.DB_CONNECT, { useNewUrlParser: true }, () => {
     console.log("Connected to db!");
 
