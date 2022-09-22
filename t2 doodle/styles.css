@@ -1,0 +1,76 @@
+body {
+    margin: 0;
+    min-width: 250px;
+  }
+  
+  /* Include the padding and border in an element's total width and height */
+  * {
+    box-sizing: border-box;
+  }
+
+/* Style the table with your availability*/
+  .timesheet {
+    text-align: center;
+    width: 300px;
+  }
+
+/* Style the table with everyone's availability*/
+  .availability {
+    text-align: center;
+    width: 300px;
+    display: none;
+  }
+
+  /* Style the table to look a nice blue with a white border*/
+  table, th, td {
+    border: 1px solid white;
+    border-collapse: collapse;
+  }
+  th, td {
+    background-color: #adf2f2;
+  }
+  
+  /* Style the header color, etc*/
+  .header {
+    background-color: #33cccc;
+    padding: 30px 40px;
+    color: white;
+    text-align: center;
+  }
+  
+  /* Clear floats after the header */
+  .header:after {
+    content: "";
+    display: table;
+    clear: both;
+  }
+  
+  /* Style the input location, size, etc*/
+  input {
+    margin: 0;
+    border: none;
+    border-radius: 0;
+    width: 75%;
+    padding: 10px;
+    float: left;
+    font-size: 16px;
+  }
+  
+  /* Style the "Add" button location, color, etc. */
+  .addBtn {
+    padding: 10px;
+    width: 25%;
+    background: #d9d9d9;
+    color: #555;
+    float: right;
+    text-align: center;
+    font-size: 16px;
+    cursor: pointer;
+    transition: 0.3s;
+    border-radius: 0;
+  }
+  
+  /* color changes when you hover over the add button */
+  .addBtn:hover {
+    background-color: #bbb;
+  }

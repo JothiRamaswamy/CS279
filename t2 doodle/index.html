@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <!-- add CSS styles here -->
+  <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+
+  <!-- add a div section for the header, with the title, along with the input box
+for adding the user's name-->
+  <div id="myDIV" class="header">
+    <h2 style="margin:5px">My Doodle Poll</h2>
+    <input type="text" id="myInput" placeholder="Name...">
+  </div>
+
+<!-- the div for the user inputting their own availabilities -->
+  <div id="timesheet" class="timesheet">
+    <h2 id="yourAvailability">Select your availability below</h2>
+    <table>
+      <tr>
+        <!-- available times to select from -->
+        <th>Monday 4pm-5pm</th>
+        <th>Monday 5pm-6pm</th>
+        <th>Tuesday 5pm-6pm</th>
+      </tr>
+      <tr>
+        <!-- the table cells that users can select based on the time they are below -->
+        <!-- KEY FUNCTIONALITY: checking off your availability for each date/time 
+        instead of dragging over it like you would in When2Meet -->
+        <!-- Other unique functionality: Being able to select tentative availability
+        instead of just yes/no -->
+        <td onclick="checkClick(0)" id="0">☐</td>
+        <td onclick="checkClick(1)" id="1">☐</td>
+        <td onclick="checkClick(2)" id="2">☐</td>
+      </tr>
+    </table>
+    <!-- create the add button to submit the user's availability and show everyone's
+    availability -->
+    <span" onclick="newElement()" id="addBtn" class="addBtn">Add</span>
+  </div>
+
+  <!-- table for everyone's availability -->
+  <div id="everyone" class="availability">
+    <h2>Everyone's availability</h2>
+    <table id="everyone_table">
+      <!-- available times that users can select from -->
+      <tr>
+        <th></th>
+        <th>Monday 4pm-5pm</th>
+        <th>Monday 5pm-6pm</th>
+        <th>Tuesday 5pm-6pm</th>
+      </tr>
+      <!-- default user and default availabilities -->
+      <tr>
+        <td>Jothi</td>
+        <td>❌</td>
+        <td>✅</td>
+        <td>❓</td>
+      </tr>
+      <!-- default user and default availabilities -->
+      <tr>
+        <td>Justin</td>
+        <td>✅</td>
+        <td>✅</td>
+        <td>❌</td>
+      </tr>
+    </table>
+  </div>
+  <!-- javascript script to add interactive features to the todo list -->
+  <script src="scripts.js"></script>
+
+</body>
+
+</html>
