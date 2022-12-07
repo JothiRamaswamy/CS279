@@ -1,0 +1,16 @@
+ /* Style the table to look a nice blue with a white border*/
+ table, th, td {
+    border: 1px solid white;
+    border-collapse: collapse;
+  }
+  body {
+    color:#007e7e;
+  }
+  button {
+    background-color:#007e7e;
+    border: none;
+    color: white;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+  }
