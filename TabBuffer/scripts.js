@@ -24,7 +24,6 @@ const getLeastRecentTabs = () => {
         }
     });
     var keys = Object.keys(visitTimes);
-    alert(keys.length);
     finalTabs = [];
     for (key in keys) {
         finalTabs.push(visitTimes[key]);
@@ -47,13 +46,16 @@ const populateList = (reload)=>{
         for (let tab of tabs) {
             chrome.history.search({text: tab.url, maxResults: 1}, function (histories) {
                 if(tab.discarded == true || histories[0].lastVisitTime < (Date.now() - 6*3600000)) {
+                    chrome.tabs.discard(tab.id);
                     var li = document.createElement("li");
+                    li.className = "list-group-item";
                     var tbl = document.createElement("table");
                     var tblBody = document.createElement("tbody");
                     tbl.appendChild(tblBody);
                     var row =  tblBody.insertRow();
-                    const td1 = row.insertCell();
                     const td2 = row.insertCell();
+                    const td1 = row.insertCell();
+                    td1.className = "tab-link";
                     td1.appendChild(document.createTextNode(tab.title));
                     td1.onclick = function() {
                         chrome.tabs.update(tab.id, {active: true});
@@ -63,7 +65,9 @@ const populateList = (reload)=>{
                     deleteButton.onclick = function() {
                         chrome.tabs.remove(tab.id);
                         li.parentNode.removeChild(li);
-                        if (document.querySelectorAll('#inactiveList li').length == 0) populateList(true);
+                        if (document.querySelectorAll('#inactiveList li').length == 0) setTimeout(function(){
+                            populateList(true);
+                        }, 500); 
                         loadStatistics();
                     };
                     td2.appendChild(deleteButton);
@@ -90,14 +94,13 @@ const loadStatistics = () => {
 const checkAlarm = () => {
     chrome.alarms.getAll(function(alarms) {
         var hasAlarm = alarms.some(function(a) {
-          return a.name == "1hr";
+          return a.name == "3hr";
         });
         if (!hasAlarm) {
-            chrome.alarms.create("1hr", {
+            chrome.alarms.create("3hr", {
                 delayInMinutes: 0,
-                periodInMinutes: 60
+                periodInMinutes: 180
               });
-            alert("alarm created!");
         }
     });
 }
@@ -118,13 +121,4 @@ reloadButton.onclick = function() {
 chrome.alarms.onAlarm.addListener(function( alarm ) {
     discardAllTabs();
   });
-
-// toolbar button event listener
-chrome.action.onLoad.addListener(function () {
-    alert("Hello!");
-});
-
-chrome.runtime.onInstalled.addListener(function(details) {
-    alert("Hello!");
-});
 
